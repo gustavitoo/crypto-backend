@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { PingModule } from './ping/ping.module';
 
 @Module({
   imports: [
@@ -23,6 +24,8 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
       }),
       inject: [ConfigService],
     }),
+
+    PingModule,
   ],
 })
 export class AppModule {}

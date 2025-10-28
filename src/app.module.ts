@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
 import { PingModule } from './ping/ping.module';
+import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -26,6 +28,10 @@ import { PingModule } from './ping/ping.module';
     }),
 
     PingModule,
+
+    UsersModule,
+
+    AuthModule,
   ],
 })
 export class AppModule {}
